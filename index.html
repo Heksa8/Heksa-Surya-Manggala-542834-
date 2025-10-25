@@ -1,0 +1,320 @@
+<html>
+  <head>
+    <title>Data Sekolah Dasar Kabupaten Bogor</title>
+    <!-- Bagian CSS untuk mengatur tampilan halaman -->
+    <style>
+       /* Mengatur gaya umum halaman */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #8e8e8e;
+        margin: 0;
+        padding: 0;
+        color: #222;
+      }
+
+       /* Header atau judul utama */
+      .hero {
+        position: relative;
+        background: url('https://assets-id.99.co/prod/assets/tugu_kujang_bogor_40056780cc/tugu_kujang_bogor_40056780cc.jpg') 
+            center / cover no-repeat;
+        height: 400px;
+        color: white;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero img {
+        width: 140px;
+        margin-bottom: 20px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+        font-weight: bold;
+        margin: 10px 0;
+      }
+
+      .hero p {
+        font-size: 18px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      /* ====== Bagian tombol kategori ====== */
+      .container {
+        width: 95%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .button-group {
+        margin: 20px 0;
+      }
+
+      button {
+        background-color: rgb(226, 226, 226);
+        color: rgb(31, 31, 31);
+        border: 1px solid #1f1f1f;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin: 5px;
+        border-radius: 5px;
+        transition: 0,3s;
+      }
+
+      button:hover {
+        background-color: white;
+        color: black;
+      }
+      /* ====== Tabel data ====== */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+        font-size: 14px;
+      }
+
+      th, td {
+        border: 1px solid #333;
+        padding: 6px;
+        text-align: center;
+      }
+
+      th {
+        background-color: rgb(107, 112, 106);
+        color: white;
+      }
+
+      tr:nth-child(even) {
+        background-color: #e6e6e6;
+      }
+
+      tr:nth-child(odd) {
+        background-color: white;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      h2 {
+        margin-top: 30px;
+      }
+    </style>
+
+    <!-- ==================== BAGIAN JAVASCRIPT ==================== -->
+    <script>
+      // Fungsi untuk menampilkan tabel berdasarkan tombol yang diklik
+      function showTable(id) {
+        var tables = document.querySelectorAll('.data-table');
+        tables.forEach(function(tbl) {
+          tbl.classList.add('hidden');
+        });
+        document.getElementById(id).classList.remove('hidden');
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- ==================== BAGIAN HEADER / JUDUL ==================== -->
+    <div class="hero">
+      <div class="hero-content">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Lambang_Kabupaten_Bogor.svg/711px-Lambang_Kabupaten_Bogor.svg.png" alt="Logo Kabupaten Bogor">
+        <h1>Data Sekolah Dasar Kabupaten Bogor Tahun 2023</h1>
+        <p>Data ini memuat jumlah sekolah, guru, dan murid Sekolah Dasar (SD) di Kabupaten Bogor tahun 2023 berdasarkan publikasi resmi Badan Pusat Statistik (BPS) Kabupaten Bogor.</p>
+      </div>
+    </div>
+
+    <!-- ==================== TOMBOL PILIHAN KATEGORI ==================== -->
+    <div class="container">
+      <div class="button-group">
+        <button onclick="showTable('sekolah')">Jumlah Sekolah SD</button>
+        <button onclick="showTable('guru')">Jumlah Guru SD</button>
+        <button onclick="showTable('murid')">Jumlah Murid SD</button>
+      </div>
+
+      <!-- TABEL JUMLAH SEKOLAH -->
+      <div id="sekolah" class="data-table">
+        <h2>Jumlah Sekolah SD di Kabupaten Bogor (2023)</h2>
+        <table>
+          <tr>
+            <th>Kecamatan</th>
+            <th>SD Negeri</th>
+            <th>SD Swasta</th>
+            <th>Total</th>
+          </tr>
+
+          <!-- Data SD dari seluruh kecamatan -->
+          <tr><td>Nanggung</td><td>45</td><td>2</td><td>48</td></tr>
+          <tr><td>Leuwiliang</td><td>57</td><td>4</td><td>61</td></tr>
+          <tr><td>Leuwisadeng</td><td>29</td><td>1</td><td>30</td></tr>
+          <tr><td>Pamijahan</td><td>43</td><td>4</td><td>47</td></tr>
+          <tr><td>Cibungbulang</td><td>41</td><td>2</td><td>43</td></tr>
+          <tr><td>Ciampea</td><td>45</td><td>2</td><td>50</td></tr>
+          <tr><td>Tenjolaya</td><td>19</td><td>5</td><td>24</td></tr>
+          <tr><td>Dramaga</td><td>34</td><td>1</td><td>35</td></tr>
+          <tr><td>Ciomas</td><td>38</td><td>3</td><td>41</td></tr>
+          <tr><td>Tamansari</td><td>29</td><td>3</td><td>32</td></tr>
+          <tr><td>Cijeruk</td><td>38</td><td>-</td><td>39</td></tr>
+          <tr><td>Cigombong</td><td>46</td><td>2</td><td>50</td></tr>
+          <tr><td>Caringin</td><td>33</td><td>2</td><td>35</td></tr>
+          <tr><td>Ciawi</td><td>25</td><td>5</td><td>31</td></tr>
+          <tr><td>Cisarua</td><td>30</td><td>5</td><td>36</td></tr>
+          <tr><td>Megamendung</td><td>37</td><td>1</td><td>40</td></tr>
+          <tr><td>Sukaraja</td><td>43</td><td>3</td><td>46</td></tr>
+          <tr><td>Babakan Madang</td><td>44</td><td>8</td><td>57</td></tr>
+          <tr><td>Sukamakmur</td><td>30</td><td>-</td><td>30</td></tr>
+          <tr><td>Cariu</td><td>28</td><td>-</td><td>28</td></tr>
+          <tr><td>Tanjungsari</td><td>26</td><td>-</td><td>26</td></tr>
+          <tr><td>Jonggol</td><td>53</td><td>6</td><td>60</td></tr>
+          <tr><td>Cileungsi</td><td>54</td><td>32</td><td>91</td></tr>
+          <tr><td>Klapanunggal</td><td>27</td><td>5</td><td>33</td></tr>
+          <tr><td>Gunung Putri</td><td>58</td><td>35</td><td>100</td></tr>
+          <tr><td>Citeureup</td><td>56</td><td>7</td><td>63</td></tr>
+          <tr><td>Cibinong</td><td>62</td><td>24</td><td>96</td></tr>
+          <tr><td>Bojong Gede</td><td>24</td><td>29</td><td>57</td></tr>
+          <tr><td>Tajur Halang</td><td>17</td><td>9</td><td>30</td></tr>
+          <tr><td>Kemang</td><td>26</td><td>12</td><td>41</td></tr>
+          <tr><td>Rancabungur</td><td>20</td><td>2</td><td>24</td></tr>
+          <tr><td>Parung</td><td>27</td><td>9</td><td>38</td></tr>
+          <tr><td>Ciseeng</td><td>33</td><td>4</td><td>38</td></tr>
+          <tr><td>Gunung Sindur</td><td>37</td><td>5</td><td>48</td></tr>
+          <tr><td>Rumpin</td><td>62</td><td>3</td><td>65</td></tr>
+          <tr><td>Cigudeg</td><td>54</td><td>-</td><td>55</td></tr>
+          <tr><td>Sukajaya</td><td>29</td><td>-</td><td>29</td></tr>
+          <tr><td>Jasinga</td><td>59</td><td>2</td><td>61</td></tr>
+          <tr><td>Tenjo</td><td>34</td><td>2</td><td>36</td></tr>
+          <tr><td>Parung Panjang</td><td>45</td><td>7</td><td>53</td></tr>
+          <tr><th>Total</th><th>1.537</th><th>246</th><th>1.847</th></tr>
+        </table>
+      </div>
+
+      <!-- TABEL JUMLAH GURU -->
+      <div id="guru" class="data-table hidden">
+        <h2>Jumlah Guru SD di Kabupaten Bogor (2023)</h2>
+        <table>
+          <tr>
+            <th>Kecamatan</th>
+            <th>Guru Negeri</th>
+            <th>Guru Swasta</th>
+            <th>Total</th>
+          </tr>
+
+          <!-- Data guru dari seluruh kecamatan -->
+          <tr><td>Nanggung</td><td>337</td><td>12</td><td>359</td></tr>
+          <tr><td>Leuwiliang</td><td>482</td><td>37</td><td>536</td></tr>
+          <tr><td>Leuwisadeng</td><td>252</td><td>10</td><td>263</td></tr>
+          <tr><td>Pamijahan</td><td>457</td><td>24</td><td>492</td></tr>
+          <tr><td>Cibungbulang</td><td>412</td><td>38</td><td>460</td></tr>
+          <tr><td>Ciampea</td><td>465</td><td>12</td><td>501</td></tr>
+          <tr><td>Tenjolaya</td><td>171</td><td>30</td><td>201</td></tr>
+          <tr><td>Dramaga</td><td>380</td><td>5</td><td>388</td></tr>
+          <tr><td>Ciomas</td><td>439</td><td>53</td><td>480</td></tr>
+          <tr><td>Tamansari</td><td>331</td><td>15</td><td>371</td></tr>
+          <tr><td>Cijeruk</td><td>339</td><td>-</td><td>348</td></tr>
+          <tr><td>Cigombong</td><td>382</td><td>18</td><td>432</td></tr>
+          <tr><td>Caringin</td><td>314</td><td>22</td><td>338</td></tr>
+          <tr><td>Ciawi</td><td>323</td><td>73</td><td>404</td></tr>
+          <tr><td>Cisarua</td><td>369</td><td>39</td><td>404</td></tr>
+          <tr><td>Megamendung</td><td>368</td><td>7</td><td>392</td></tr>
+          <tr><td>Sukaraja</td><td>512</td><td>24</td><td>539</td></tr>
+          <tr><td>Babakan Madang</td><td>361</td><td>70</td><td>480</td></tr>
+          <tr><td>Sukamakmur</td><td>264</td><td>-</td><td>264</td></tr>
+          <tr><td>Cariu</td><td>241</td><td>-</td><td>241</td></tr>
+          <tr><td>Tanjungsari</td><td>205</td><td>-</td><td>205</td></tr>
+          <tr><td>Jonggol</td><td>444</td><td>93</td><td>540</td></tr>
+          <tr><td>Cileungsi</td><td>711</td><td>402</td><td>1.266</td></tr>
+          <tr><td>Klapanunggal</td><td>288</td><td>73</td><td>374</td></tr>
+          <tr><td>Gunung Putri</td><td>728</td><td>613</td><td>1.428</td></tr>
+          <tr><td>Citeureup</td><td>644</td><td>84</td><td>740</td></tr>
+          <tr><td>Cibinong</td><td>833</td><td>543</td><td>1.482</td></tr>
+          <tr><td>Bojong Gede</td><td>427</td><td>367</td><td>875</td></tr>
+          <tr><td>Tajur Halang</td><td>249</td><td>94</td><td>377</td></tr>
+          <tr><td>Kemang</td><td>271</td><td>252</td><td>548</td></tr>
+          <tr><td>Rancabungur</td><td>190</td><td>18</td><td>228</td></tr>
+          <tr><td>Parung</td><td>296</td><td>98</td><td>423</td></tr>
+          <tr><td>Ciseeng</td><td>312</td><td>45</td><td>367</td></tr>
+          <tr><td>Gunung Sindur</td><td>348</td><td>78</td><td>512</td></tr>
+          <tr><td>Rumpin</td><td>552</td><td>23</td><td>587</td></tr>
+          <tr><td>Cigudeg</td><td>434</td><td>-</td><td>441</td></tr>
+          <tr><td>Sukajaya</td><td>248</td><td>-</td><td>248</td></tr>
+          <tr><td>Jasinga</td><td>475</td><td>14</td><td>494</td></tr>
+          <tr><td>Tenjo</td><td>315</td><td>10</td><td>329</td></tr>
+          <tr><td>Parung Panjang</td><td>412</td><td>62</td><td>491</td></tr>
+          <tr><th>Total</th><th>15.581</th><th>3.358</th><th>19.848</th></tr>
+        </table>
+      </div>
+
+      <!-- TABEL JUMLAH MURID -->
+      <div id="murid" class="data-table hidden">
+        <h2>Jumlah Murid SD di Kabupaten Bogor (2023)</h2>
+        <table>
+          <tr>
+            <th>Kecamatan</th>
+            <th>Murid Negeri</th>
+            <th>Murid Swasta</th>
+            <th>Total</th>
+          </tr>
+
+          <!-- Data murid dari seluruh kecamatan -->
+          <tr><td>Nanggung</td><td>9.012</td><td>139</td><td>9.526</td></tr>
+    <tr><td>Leuwiliang</td><td>10.941</td><td>593</td><td>11.771</td></tr>
+    <tr><td>Leuwisadeng</td><td>5.764</td><td>215</td><td>6.234</td></tr>
+    <tr><td>Pamijahan</td><td>11.408</td><td>460</td><td>12.347</td></tr>
+    <tr><td>Cibungbulang</td><td>11.877</td><td>665</td><td>12.783</td></tr>
+    <tr><td>Ciampea</td><td>13.916</td><td>290</td><td>14.602</td></tr>
+    <tr><td>Tenjolaya</td><td>4.063</td><td>510</td><td>4.693</td></tr>
+    <tr><td>Dramaga</td><td>9.684</td><td>80</td><td>9.875</td></tr>
+    <tr><td>Ciomas</td><td>12.077</td><td>879</td><td>12.987</td></tr>
+    <tr><td>Tamansari</td><td>9.678</td><td>510</td><td>10.512</td></tr>
+    <tr><td>Cijeruk</td><td>10.017</td><td>-</td><td>10.163</td></tr>
+    <tr><td>Cigombong</td><td>10.067</td><td>303</td><td>10.947</td></tr>
+    <tr><td>Caringin</td><td>8.515</td><td>529</td><td>9.065</td></tr>
+    <tr><td>Ciawi</td><td>10.125</td><td>1.308</td><td>11.863</td></tr>
+    <tr><td>Cisarua</td><td>12.338</td><td>746</td><td>13.165</td></tr>
+    <tr><td>Megamendung</td><td>10.225</td><td>120</td><td>10.772</td></tr>
+    <tr><td>Sukaraja</td><td>15.782</td><td>255</td><td>16.100</td></tr>
+    <tr><td>Babakan Madang</td><td>12.158</td><td>1.030</td><td>13.822</td></tr>
+    <tr><td>Sukamakmur</td><td>7.331</td><td>-</td><td>7.331</td></tr>
+    <tr><td>Cariu</td><td>4.305</td><td>-</td><td>4.305</td></tr>
+    <tr><td>Tanjungsari</td><td>4.757</td><td>-</td><td>4.757</td></tr>
+    <tr><td>Jonggol</td><td>12.580</td><td>1.632</td><td>14.202</td></tr>
+    <tr><td>Cileungsi</td><td>25.114</td><td>7.796</td><td>35.022</td></tr>
+    <tr><td>Klapanunggal</td><td>12.134</td><td>1.536</td><td>13.629</td></tr>
+    <tr><td>Gunung Putri</td><td>21.877</td><td>10.698</td><td>31.645</td></tr>
+    <tr><td>Citeureup</td><td>18.063</td><td>1.439</td><td>19.509</td></tr>
+    <tr><td>Cibinong</td><td>24.403</td><td>10.373</td><td>36.223</td></tr>
+    <tr><td>Bojong Gede</td><td>15.503</td><td>7.447</td><td>23.901</td></tr>
+    <tr><td>Tajur Halang</td><td>7.980</td><td>1.528</td><td>10.283</td></tr>
+    <tr><td>Kemang</td><td>8.623</td><td>3.341</td><td>12.547</td></tr>
+    <tr><td>Rancabungur</td><td>5.481</td><td>326</td><td>6.019</td></tr>
+    <tr><td>Parung</td><td>8.085</td><td>1.925</td><td>10.701</td></tr>
+    <tr><td>Ciseeng</td><td>10.822</td><td>1.055</td><td>12.316</td></tr>
+    <tr><td>Gunung Sindur</td><td>10.431</td><td>1.371</td><td>13.223</td></tr>
+    <tr><td>Rumpin</td><td>16.815</td><td>700</td><td>17.581</td></tr>
+    <tr><td>Cigudeg</td><td>14.293</td><td>-</td><td>14.371</td></tr>
+    <tr><td>Sukajaya</td><td>6.522</td><td>-</td><td>6.522</td></tr>
+    <tr><td>Jasinga</td><td>12.362</td><td>383</td><td>12.677</td></tr>
+    <tr><td>Tenjo</td><td>7.661</td><td>242</td><td>8.121</td></tr>
+    <tr><td>Parung Panjang</td><td>12.722</td><td>777</td><td>13.981</td></tr>
+    <tr><th>Total</th><th>455.511</th><th>61.201</th><th>530.093</th></tr> 
